@@ -1,7 +1,6 @@
 import React from 'react';
-import { Routes, Route, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../Assets/Images/planet2.png';
-import Dragon from './Pages/Dragon';
 import style from './style/Header.module.css';
 
 const HeaderStyle = {
@@ -31,9 +30,6 @@ export default function Header() {
         </NavLink>
         <NavLink to="/dragon" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Dragons </NavLink>
       </header>
-      <Routes>
-        <Route path="/dragon" element={<Dragon />} />
-      </Routes>
     </>
   );
 }
