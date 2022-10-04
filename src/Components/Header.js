@@ -1,11 +1,7 @@
 import React from 'react';
-import { Routes, Route, NavLink } from 'react-router-dom';
-import logo from '../Assets/Images/planet2.png';
-import Dragon from './Pages/Dragon';
-import Missions from './Pages/Missions';
-import Rocket from './Pages/Rocket';
-import MyProfile from './Pages/myProfile';
+import { NavLink } from 'react-router-dom';
 import style from './style/Header.module.css';
+import logo from '../Assets/Images/planet2.png';
 
 const HeaderStyle = {
   display: 'flex',
@@ -45,13 +41,6 @@ export default function Header() {
           <NavLink to="/myProfile" style={({ isActive }) => (isActive ? activeStyle : undefined)}> My Profile </NavLink>
         </nav>
       </header>
-
-      <Routes>
-        <Route path="/" element={<Rocket />} />
-        <Route path="/missions" element={<Missions />} />
-        <Route path="/dragon" element={<Dragon />} />
-        <Route path="/myProfile" element={<MyProfile />} />
-      </Routes>
     </>
   );
 }
