@@ -1,16 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+const card = {
+  boxShadow: ' 1px 2px 10px #ddd',
+};
+
+const h = {
+  color: 'darkcyan',
+  fontSize: '2em',
+};
+
+const p = {
+  color: 'orangered',
+  marginTop: '10px',
+  fontSize: '1.4em',
+};
+
+const p1 = {
+  TextAlign: 'justify',
+};
+
 export default function Dragon({ dragon }) {
   const {
     designation, type, image, description, reserved,
   } = dragon;
   return (
-    <article className="bg-dark text-light  rounded p-3">
-      <h1 className="">{designation}</h1>
+    <article className="rounded p-3" style={card}>
+      <h1 className="" style={h}>{designation}</h1>
       <img src={image} alt={designation} width={250} height={250} />
-      <p>{description}</p>
-      <p>{type}</p>
+      <p style={p}>{type}</p>
+      <p style={p1}>{description}</p>
       <p>
         {reserved ? <span className="bagde badge-success bg-success"> Reseved</span> : <span className="badge badge-danger bg-danger"> Not Reserved</span>}
       </p>

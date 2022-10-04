@@ -34,7 +34,7 @@ export default function Header() {
           </div>
         </NavLink>
         <nav className={style.navigation}>
-          <NavLink to="/" style={({ isActive }) => (isActive ? activeStyle : {})}> Rocket </NavLink>
+          <NavLink to="/" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Rocket </NavLink>
           <NavLink to="/dragon" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Dragons </NavLink>
           <NavLink to="/missions" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Missions </NavLink>
           <div style={separator} />
