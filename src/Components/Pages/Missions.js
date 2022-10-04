@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Missions () {
+function Missions() {
   return (
     <div>
       <h1>Missions page is under construction</h1>

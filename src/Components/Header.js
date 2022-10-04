@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, NavLink } from 'react-router-dom';
 import logo from '../Assets/Images/planet2.png';
 import Dragon from './Pages/Dragon';
+import Missions from './Pages/Missions';
 import style from './style/Header.module.css';
 
 const HeaderStyle = {
@@ -30,8 +31,10 @@ export default function Header() {
           </div>
         </NavLink>
         <NavLink to="/dragon" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Dragons </NavLink>
+        <NavLink to="/missions" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Missions </NavLink>
       </header>
       <Routes>
+        <Route path="/missions" element={<Missions />} />
         <Route path="/dragon" element={<Dragon />} />
       </Routes>
     </>
