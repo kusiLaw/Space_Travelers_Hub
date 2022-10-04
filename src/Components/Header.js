@@ -1,10 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import logo from '../Assets/Images/planet2.png';
-import Dragon from './Pages/Dragon';
-import Missions from './Pages/Missions';
-import Rocket from './Pages/Rocket';
-import MyProfile from './Pages/myProfile';
 import style from './style/Header.module.css';
 
 const HeaderStyle = {
