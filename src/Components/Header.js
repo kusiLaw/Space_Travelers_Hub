@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import style from './style/Header.module.css';
+import logo from '../Assets/Images/planet2.png';
 
 const HeaderStyle = {
   display: 'flex',
