@@ -14,3 +14,9 @@
   border-bottom: 2px solid;
   padding-bottom: 0.2rem;
 }
+
+.navigation {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}

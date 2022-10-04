@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, NavLink } from 'react-router-dom';
 import logo from '../Assets/Images/planet2.png';
 import Dragon from './Pages/Dragon';
+import Rocket from './Pages/Rocket';
 import style from './style/Header.module.css';
 
 const HeaderStyle = {
@@ -29,9 +30,15 @@ export default function Header() {
             <img src={logo} alt="" width={50} height={50} />
           </div>
         </NavLink>
-        <NavLink to="/dragon" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Dragons </NavLink>
+
+        <nav className={style.navigation}>
+          <NavLink to="/" style={({ isActive }) => (isActive ? activeStyle : {})}> Rocket </NavLink>
+          <NavLink to="/dragon" style={({ isActive }) => (isActive ? activeStyle : {})}> Dragons </NavLink>
+        </nav>
       </header>
+
       <Routes>
+        <Route path="/" element={<Rocket />} />
         <Route path="/dragon" element={<Dragon />} />
       </Routes>
     </>
