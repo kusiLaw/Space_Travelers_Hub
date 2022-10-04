@@ -18,7 +18,7 @@ const missionsReducer = (state = [], action) => {
 };
 
 export const recieveMissions = () => async () => {
-  await fetch(baseURL)
+  await fetch('https://api.spacexdata.com/v3/missions')
     .then((res) => res.json())
     .then((missions) => {
       console.log("Missions are", missions);
