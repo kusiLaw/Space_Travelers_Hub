@@ -3,6 +3,7 @@ import { Routes, Route, NavLink } from 'react-router-dom';
 import logo from '../Assets/Images/planet2.png';
 import Dragon from './Pages/Dragon';
 import Missions from './Pages/Missions';
+import Rocket from './Pages/Rocket';
 import MyProfile from './Pages/myProfile';
 import style from './style/Header.module.css';
 
@@ -36,12 +37,17 @@ export default function Header() {
             <img src={logo} alt="" width={50} height={50} />
           </div>
         </NavLink>
-        <NavLink to="/dragon" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Dragons </NavLink>
-        <NavLink to="/missions" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Missions </NavLink>
-        <div style={separator} />
-        <NavLink to="/myProfile" style={({ isActive }) => (isActive ? activeStyle : undefined)}> My Profile </NavLink>
+        <nav className={style.navigation}>
+          <NavLink to="/" style={({ isActive }) => (isActive ? activeStyle : {})}> Rocket </NavLink>
+          <NavLink to="/dragon" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Dragons </NavLink>
+          <NavLink to="/missions" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Missions </NavLink>
+          <div style={separator} />
+          <NavLink to="/myProfile" style={({ isActive }) => (isActive ? activeStyle : undefined)}> My Profile </NavLink>
+        </nav>
       </header>
+
       <Routes>
+        <Route path="/" element={<Rocket />} />
         <Route path="/missions" element={<Missions />} />
         <Route path="/dragon" element={<Dragon />} />
         <Route path="/myProfile" element={<MyProfile />} />
