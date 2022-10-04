@@ -30,6 +30,7 @@ export default function Header() {
           </div>
         </NavLink>
         <NavLink to="/dragon" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Dragons </NavLink>
+        <NavLink to="/my-profile" style={({ isActive }) => (isActive ? activeStyle : undefined)}> My Profile </NavLink>
       </header>
       <Routes>
         <Route path="/dragon" element={<Dragon />} />
