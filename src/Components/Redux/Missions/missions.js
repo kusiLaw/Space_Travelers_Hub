@@ -17,4 +17,12 @@ const missionsReducer = (state = [], action) => {
   }
 };
 
+export const recieveMissions = () => async () => {
+  await fetch(baseURL)
+    .then((res) => res.json())
+    .then((missions) => {
+      console.log("Missions are", missions);
+    });
+};
+
 export default missionsReducer;
