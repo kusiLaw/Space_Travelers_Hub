@@ -17,11 +17,21 @@ const missionsReducer = (state = [], action) => {
   }
 };
 
-export const recieveMissions = () => async () => {
+export const recieveMissions = () => async (dispatch) => {
   await fetch('https://api.spacexdata.com/v3/missions')
     .then((res) => res.json())
     .then((missions) => {
-      console.log("Missions are", missions);
+      const missionsList = [];
+      Object.keys(missions).map((key) => {
+        missionsList.push({
+          mission_id: missions[key].mission_id,
+          mission_name: missions[key].mission_name,
+          description: missions[key].description,
+        });
+        return missionsList;
+      });
+      console.log('Missions are', missionsList);
+      dispatch(read(missionsList));
     });
 };
 
