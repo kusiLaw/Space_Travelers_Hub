@@ -2,7 +2,7 @@
   color: transparent;
 }
 
-.header a{
+.header a {
   color: orangered;
   text-decoration: none;
   text-transform: uppercase;
@@ -12,5 +12,5 @@
 .header a:hover {
   color: darkcyan;
   border-bottom: 2px solid;
-  padding-bottom: .2rem;
+  padding-bottom: 0.2rem;
 }
