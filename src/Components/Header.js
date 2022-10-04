@@ -20,6 +20,11 @@ const activeStyle = {
   paddingBottom: '.2rem',
 };
 
+const separator = {
+  border: '1px solid black',
+  height: '15px',
+};
+
 export default function Header() {
   return (
     <>
@@ -30,6 +35,7 @@ export default function Header() {
           </div>
         </NavLink>
         <NavLink to="/dragon" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Dragons </NavLink>
+        <div style={separator} />
         <NavLink to="/my-profile" style={({ isActive }) => (isActive ? activeStyle : undefined)}> My Profile </NavLink>
       </header>
       <Routes>
