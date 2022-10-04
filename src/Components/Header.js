@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route, NavLink } from 'react-router-dom';
 import logo from '../Assets/Images/planet2.png';
 import Dragon from './Pages/Dragon';
+import MyProfile from './Pages/myProfile';
 import style from './style/Header.module.css';
 
 const HeaderStyle = {
@@ -36,10 +37,11 @@ export default function Header() {
         </NavLink>
         <NavLink to="/dragon" style={({ isActive }) => (isActive ? activeStyle : undefined)}> Dragons </NavLink>
         <div style={separator} />
-        <NavLink to="/my-profile" style={({ isActive }) => (isActive ? activeStyle : undefined)}> My Profile </NavLink>
+        <NavLink to="/myProfile" style={({ isActive }) => (isActive ? activeStyle : undefined)}> My Profile </NavLink>
       </header>
       <Routes>
         <Route path="/dragon" element={<Dragon />} />
+        <Route path="/myProfile" element={<MyProfile />} />
       </Routes>
     </>
   );
