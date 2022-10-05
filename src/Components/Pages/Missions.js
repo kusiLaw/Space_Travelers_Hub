@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { recieveMissions } from '../../Redux/Missions/missions';
+import MissionItem from './MissionItem';
 
 function Missions() {
   const missions = useSelector((state) => state.missions);
@@ -12,7 +13,12 @@ function Missions() {
 
   return (
     <div>
-      <h1>Missions page is under construction</h1>
+      <hr />
+        <tbody>
+          {missions.map((mission) => (
+            <MissionItem key={mission.mission_id} mission_id={mission.mission_id} mission_name={mission.mission_name} description={mission.description} />
+          ))}
+        </tbody>
     </div>
   );
 }
