@@ -6,8 +6,7 @@ import missionsReducer from './Missions/missions';
 const rootReducer = combineReducers(
   {
     missions: missionsReducer,
-  },
-);
+  });
 
 const store = createStore(rootReducer, applyMiddleware(logger, thunk));
 
