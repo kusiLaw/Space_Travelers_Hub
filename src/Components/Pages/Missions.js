@@ -26,11 +26,10 @@ function Missions() {
         </thead>
         <tbody>
           {missions.map((mission) => (
-            <MissionItem
-              key={mission.mission_id}
-              missionName={mission.missionName}
-              description={mission.description}
-            />
+            <MissionItem key={mission.mission_id}
+            mission_id={mission.mission_id} missionName={mission.missionName}
+            description={mission.description} reserved={mission.reserved} />
+
           ))}
         </tbody>
       </Table>
