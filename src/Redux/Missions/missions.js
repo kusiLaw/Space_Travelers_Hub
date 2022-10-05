@@ -30,7 +30,7 @@ export const recieveMissions = () => async (dispatch) => {
         });
         return missionsList;
       });
-      console.log('Missions are', missionsList);
+      // console.log('Missions are', missionsList);
       dispatch(read(missionsList));
     });
 };
