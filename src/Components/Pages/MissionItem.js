@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
@@ -12,7 +13,6 @@ const MissionItem = ({
     e.preventDefault();
     console.log('booking', mission_id, 'reserved was', reserved);
     dispatch(book(mission_id));
-    console.log('reserved is now', reserved);
   };
 
   return (
@@ -21,8 +21,8 @@ const MissionItem = ({
       <td>{description}</td>
       <td>status</td>
       <td>
-        <button onClick={reserve}>Join Mission</button>
-        <button>Leave Mission</button>
+        <button type="button" onClick={reserve}>Join Mission</button>
+        <button type="button">Leave Mission</button>
       </td>
     </tr>
   );
@@ -31,6 +31,8 @@ const MissionItem = ({
 MissionItem.propTypes = {
   missionName: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
+  mission_id: PropTypes.string.isRequired,
+  reserved: PropTypes.bool.isRequired,
 };
 
 export default MissionItem;
