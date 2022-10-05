@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { book } from '../redux/missions/missions';
+import { book } from '../../Redux/Missions/missions';
 
-const MissionItem = ({ mission_id, missionName, description, reserved }) => {
+const MissionItem = ({
+  mission_id, missionName, description, reserved,
+}) => {
   const dispatch = useDispatch();
 
   const reserve = (e) => {

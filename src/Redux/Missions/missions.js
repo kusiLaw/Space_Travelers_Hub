@@ -20,11 +20,11 @@ const missionsReducer = (state = [], action) => {
     case READ:
       return action.payload;
     case BOOK:
-        newState = state.map((item) => {
-          if (item.mission_id !== action.payload) return item;
-          return { ...item, reserved: true };
-        });
-        return newState;
+      newState = state.map((item) => {
+        if (item.mission_id !== action.payload) return item;
+        return { ...item, reserved: true };
+      });
+      return newState;
     default:
       return state;
   }
@@ -40,7 +40,7 @@ export const recieveMissions = () => async (dispatch) => {
           mission_id: missions[key].mission_id,
           missionName: missions[key].mission_name,
           description: missions[key].description,
-          reserved: false,         
+          reserved: false,
         });
         return missionsList;
       });
