@@ -1,13 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { getRocketData } from '../../Redux/Rockets/rocket';
+import { getRocketData, reserveRocket } from '../../Redux/Rockets/rocket';
 import style from '../style/Rocket.module.css';
 
 const Rocket = () => {
   // get data from store
   const dispatch = useDispatch();
   const rockets = useSelector((state) => state.rockets);
-  // console.log(rockets)
 
   useEffect(() => {
     if (rockets.rocketList.length === 0) {
@@ -27,10 +26,18 @@ const Rocket = () => {
          <div className={style.rocket_body_container}>
            <h2>{items.rocketName}</h2>
            <p>
-             <span />
+             { items.reserved ? <span>Reserved </span> : <></>}
              {items.description}
            </p>
-           <button className={style.btn_reserved} type="button">Reserve Rocket</button>
+           <button
+             className={style.btn_reserved}
+             type="button"
+             onClick={() => {
+               dispatch(reserveRocket(items.id));
+             }}
+           >
+             Reserve Rocket
+           </button>
          </div>
        </li>
      ))

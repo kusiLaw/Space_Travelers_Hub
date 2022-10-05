@@ -32,6 +32,20 @@ const rocketsSlice = createSlice({
   name: 'rocket',
   initialState,
   reducers: {
+    reserveRocket: (state, action) => {
+    // action.payload contains the dispatch id
+      const newState = state.rocketList.map((rocket) => {
+        if (rocket.id !== action.payload) return rocket;
+        return { ...rocket, reserved: true };
+      });
+
+      // return new book list,initialState will be assigned with this
+      return {
+        rocketList: newState,
+
+      };
+    },
+
   },
 
   extraReducers: {
