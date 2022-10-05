@@ -46,6 +46,19 @@ const rocketsSlice = createSlice({
       };
     },
 
+    cancelReservation: (state, action) => {
+      const newState = state.rocketList.map((rocket) => {
+        if (rocket.id !== action.payload) return rocket;
+        return { ...rocket, reserved: false };
+      });
+
+      // return new book list,initialState will be assigned with this
+      return {
+        rocketList: newState,
+
+      };
+    },
+
   },
 
   extraReducers: {
