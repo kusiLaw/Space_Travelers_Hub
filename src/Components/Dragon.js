@@ -30,9 +30,19 @@ export default function Dragon({ dragon }) {
       <img src={image} alt={designation} width={250} height={250} />
       <p style={p}>{type}</p>
       <p style={p1}>{description}</p>
-      <p>
-        {reserved ? <span className="bagde badge-success bg-success"> Reseved</span> : <span className="badge badge-danger bg-danger"> Not Reserved</span>}
-      </p>
+      <div>
+        {reserved && (
+        <>
+          <span className="btn btn-success">Cancel Reservation</span>
+          <span className="bagde badge-success bg-success"> Reseved</span>
+        </>
+        )}
+        {!reserved && (
+        <>
+          <span className="btn btn-success">Make Reservation</span>
+        </>
+        )}
+      </div>
     </article>
   );
 }
