@@ -25,12 +25,11 @@ export const recieveMissions = () => async (dispatch) => {
       Object.keys(missions).map((key) => {
         missionsList.push({
           mission_id: missions[key].mission_id,
-          mission_name: missions[key].mission_name,
+          missionName: missions[key].mission_name,
           description: missions[key].description,
         });
         return missionsList;
       });
-      // console.log('Missions are', missionsList);
       dispatch(read(missionsList));
     });
 };

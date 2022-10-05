@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import Table from 'react-bootstrap/Table';
 import { recieveMissions } from '../../Redux/Missions/missions';
+import MissionItem from './MissionItem';
 
 function Missions() {
   const missions = useSelector((state) => state.missions);
@@ -12,7 +14,26 @@ function Missions() {
 
   return (
     <div>
-      <h1>Missions page is under construction</h1>
+      <hr />
+      <Table responsive striped bordered hover>
+        <thead>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>empty</th>
+          </tr>
+        </thead>
+        <tbody>
+          {missions.map((mission) => (
+            <MissionItem
+              key={mission.mission_id}
+              missionName={mission.missionName}
+              description={mission.description}
+            />
+          ))}
+        </tbody>
+      </Table>
     </div>
   );
 }
