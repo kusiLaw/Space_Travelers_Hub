@@ -14,7 +14,7 @@ export default function Dragons() {
   }, []);
 
   return (
-    <section className="Dragons-container container-fluid d-md-block d-lg-flex mt-5 gap-3 ">
+    <section className="Dragons-container container-fluid d-md-block d-lg-flex gap-lg-3 mt-lg-5 mb-lg-5">
       {dragons.map((dragon) => (
         <Dragon key={dragon.id} dragon={dragon} />
       ))}
