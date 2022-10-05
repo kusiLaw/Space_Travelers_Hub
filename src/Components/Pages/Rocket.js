@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getRocketData } from '../../Redux/Rockets/rocket';
+import style from '../style/Rocket.module.css';
 
 const Rocket = () => {
   // get data from store
@@ -16,20 +17,20 @@ const Rocket = () => {
 
   return (
     <section className="rocket-container">
-      <ul>
+      <ul className={style.rocket_list}>
         {
      rockets.rocketList.map((items) => (
-       <li key={items.id}>
+       <li key={items.id} className={style.rocket_list_item}>
          <div className="rocket-img-container">
-           <img src={items.flickerImages[0]} alt="rocket" width="300" height="250" />
+           <img src={items.flickerImages[0]} alt="rocket" width="300" height="280" />
          </div>
-         <div>
+         <div className={style.rocket_body_container}>
            <h2>{items.rocketName}</h2>
            <p>
              <span />
              {items.description}
            </p>
-           <button type="button">Reserve Rocket</button>
+           <button className={style.btn_reserved} type="button">Reserve Rocket</button>
          </div>
        </li>
      ))
