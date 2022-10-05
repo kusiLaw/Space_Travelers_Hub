@@ -3,11 +3,13 @@ import logger from 'redux-logger';
 import thunk from 'redux-thunk';
 import missionsReducer from './Missions/missions';
 import { reducerDragons } from './Dragons/Dragons';
+import rocketReducer from './Rockets/rocket';
 
 const rootReducer = combineReducers(
   {
     missions: missionsReducer,
     dragons: reducerDragons,
+    rockets: rocketReducer,
   },
 );
 
