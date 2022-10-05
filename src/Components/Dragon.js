@@ -17,7 +17,19 @@ const p = {
 };
 
 const p1 = {
-  TextAlign: 'justify',
+  textAlign: 'justify',
+};
+
+const badge = {
+  float: 'right',
+  backgroundColor: 'orangered',
+  borderRadius: '0rem 1.5rem 0rem 1.5rem',
+  padding: '0.2rem .5rem',
+};
+
+const reservation = {
+  backgroundColor: 'darkcyan',
+  border: 'none',
 };
 
 export default function Dragon({ dragon }) {
@@ -26,22 +38,18 @@ export default function Dragon({ dragon }) {
   } = dragon;
   return (
     <article className="rounded p-3" style={card}>
-      <h1 className="" style={h}>{designation}</h1>
+      <h1 className="" style={h}>
+        {designation}
+        <span className="fs-6">
+          {reserved && (<span style={badge} className="badge badge-danger"> Reseved</span>)}
+        </span>
+      </h1>
       <img src={image} alt={designation} width={250} height={250} />
       <p style={p}>{type}</p>
       <p style={p1}>{description}</p>
       <div>
-        {reserved && (
-        <>
-          <span className="btn btn-success">Cancel Reservation</span>
-          <span className="bagde badge-success bg-success"> Reseved</span>
-        </>
-        )}
-        {!reserved && (
-        <>
-          <span className="btn btn-success">Make Reservation</span>
-        </>
-        )}
+        {reserved && (<span className="btn btn-secondary">Cancel Reservation</span>)}
+        {!reserved && (<span className="btn btn-success " style={reservation}>Make Reservation</span>)}
       </div>
     </article>
   );
