@@ -32,10 +32,11 @@ const missionsReducer = (state = [], action) => {
       });
       return newState;
     case LEAVE:
-      return [...state.map((item) => {
-        if (item.id !== action.id) return item;
+      newState = state.map((item) => {
+        if (item.mission_id !== action.payload) return item;
         return { ...item, reserved: false };
-      })];
+      });
+      return newState;
     default:
       return state;
   }

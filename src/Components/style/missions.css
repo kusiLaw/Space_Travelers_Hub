@@ -1,0 +1,16 @@
+.show {
+  display: unset;
+}
+
+.hide {
+  display: none;
+}
+
+.joinButton {
+  border: red;
+}
+
+.leavButton {
+  border: red;
+  color: red;
+}

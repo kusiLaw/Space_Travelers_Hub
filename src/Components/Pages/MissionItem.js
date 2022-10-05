@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { book, leave } from '../../Redux/Missions/missions';
+import '../style/missions.css'
 
 const MissionItem = ({
   mission_id, missionName, description, reserved,
@@ -24,7 +25,11 @@ const MissionItem = ({
     <tr>
       <td>{missionName}</td>
       <td>{description}</td>
-      <td>status</td>
+      <td>
+      <div className={reserved ? 'join' : 'leave'}>
+          {reserved ? 'Active Member' : 'Not A Member'}
+        </div>
+      </td>
       <td>
         <button type="button" onClick={reserve}>Join Mission</button>
         <button type="button" onClick={leaveMission}>Leave Mission</button>
