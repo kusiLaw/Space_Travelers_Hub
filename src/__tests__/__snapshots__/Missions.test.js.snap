@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing missions component: 1`] = `
+<div>
+  <hr />
+  <div
+    className="table-responsive"
+  >
+    <table
+      className="table table-striped table-bordered table-hover"
+    >
+      <thead>
+        <tr>
+          <th
+            style={
+              Object {
+                "width": "10%",
+              }
+            }
+          >
+            Mission
+          </th>
+          <th
+            style={
+              Object {
+                "width": "60%",
+              }
+            }
+          >
+            Description
+          </th>
+          <th
+            style={
+              Object {
+                "width": "15%",
+              }
+            }
+          >
+            Status
+          </th>
+          <th
+            style={
+              Object {
+                "width": "15%",
+              }
+            }
+          >
+            empty
+          </th>
+        </tr>
+      </thead>
+      <tbody />
+    </table>
+  </div>
+</div>
+`;
