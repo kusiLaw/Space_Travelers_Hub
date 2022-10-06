@@ -18,10 +18,10 @@ function Missions() {
       <Table responsive striped bordered hover>
         <thead>
           <tr>
-            <th>Mission</th>
-            <th>Description</th>
-            <th>Status</th>
-            <th>empty</th>
+            <th style={{ width: '10%' }}>Mission</th>
+            <th style={{ width: '60%' }}>Description</th>
+            <th style={{ width: '15%' }}>Status</th>
+            <th style={{ width: '15%' }}>empty</th>
           </tr>
         </thead>
         <tbody>
