@@ -6,6 +6,12 @@ import Badge from 'react-bootstrap/Badge';
 import { book, leave } from '../../Redux/Missions/missions';
 import '../style/missions.css';
 
+const buttonStyle = {
+  width: '90%',
+  border: 'solid 1px',
+  padding: '10px',
+};
+
 const MissionItem = ({
   mission_id, missionName, description, reserved,
 }) => {
@@ -34,6 +40,7 @@ const MissionItem = ({
       </td>
       <td className="status">
         <button
+          style={buttonStyle}
           type="button"
           onClick={reserveMission}
           className={reserved ? 'join hide' : 'join show'}
@@ -41,6 +48,7 @@ const MissionItem = ({
           Join Mission
         </button>
         <button
+          style={buttonStyle}
           type="button"
           onClick={leaveMission}
           className={reserved ? 'leave show' : 'leave hide'}
