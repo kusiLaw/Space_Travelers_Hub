@@ -1,13 +1,15 @@
 /* eslint-disable no-undef */
-const ReactTestRenderer = require('react-test-renderer');
-import Missions from '../Components/Pages/Missions.js';
 import { Provider } from 'react-redux';
+import Missions from '../Components/Pages/Missions';
 import store from '../Redux/configureStore';
- 
+
+const ReactTestRenderer = require('react-test-renderer');
+
 it('Testing missions component:', () => {
   const tree = ReactTestRenderer.create(
     <Provider store={store}>
       <Missions />
-    </Provider>).toJSON();
+    </Provider>,
+  ).toJSON();
   expect(tree).toMatchSnapshot();
 });
