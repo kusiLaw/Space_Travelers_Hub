@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Dragon component, should match snapshot: 1`] = `
+<section
+  className="Dragons-container container-fluid d-md-block d-lg-flex gap-lg-3 mt-lg-5 mb-lg-5"
+/>
+`;
