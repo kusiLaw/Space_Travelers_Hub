@@ -17,22 +17,46 @@ const p = {
 };
 
 const p1 = {
-  TextAlign: 'justify',
+  textAlign: 'justify',
 };
 
-export default function Dragon({ dragon }) {
+const badge = {
+  float: 'right',
+  backgroundColor: 'orangered',
+  borderRadius: '0rem 1.5rem 0rem 1.5rem',
+  padding: '0.2rem .5rem',
+};
+
+const reservation = {
+  backgroundColor: 'darkcyan',
+  border: 'none',
+};
+
+export default function Dragon({
+  dragon,
+  id,
+  handleBooking,
+  handleCancelling,
+}) {
   const {
     designation, type, image, description, reserved,
   } = dragon;
+
   return (
     <article className="rounded p-3" style={card}>
-      <h1 className="" style={h}>{designation}</h1>
+      <h1 className="" style={h}>
+        {designation}
+        <span className="fs-6">
+          {reserved && (<span style={badge} className="badge badge-danger"> Reseved</span>)}
+        </span>
+      </h1>
       <img src={image} alt={designation} width={250} height={250} />
       <p style={p}>{type}</p>
       <p style={p1}>{description}</p>
-      <p>
-        {reserved ? <span className="bagde badge-success bg-success"> Reseved</span> : <span className="badge badge-danger bg-danger"> Not Reserved</span>}
-      </p>
+      <div>
+        {reserved && (<button type="button" id={id} onClick={handleCancelling} className="btn btn-secondary">Cancel Reservation</button>)}
+        {!reserved && (<button className="btn btn-success" type="button" id={id} style={reservation} onClick={handleBooking}>Reserve Dragon</button>)}
+      </div>
     </article>
   );
 }
@@ -45,4 +69,16 @@ Dragon.propTypes = {
     description: PropTypes.string.isRequired,
     reserved: PropTypes.bool.isRequired,
   }).isRequired,
+};
+
+Dragon.propTypes = {
+  id: PropTypes.string.isRequired,
+};
+
+Dragon.propTypes = {
+  handleBooking: PropTypes.func.isRequired,
+};
+
+Dragon.propTypes = {
+  handleCancelling: PropTypes.func.isRequired,
 };
