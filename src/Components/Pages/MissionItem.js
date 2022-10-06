@@ -3,6 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { book, leave } from '../../Redux/Missions/missions';
+import Badge from 'react-bootstrap/Badge';
 import '../style/missions.css';
 
 const MissionItem = ({
@@ -10,7 +11,7 @@ const MissionItem = ({
 }) => {
   const dispatch = useDispatch();
 
-  const reserve = (e) => {
+  const reserveMission = (e) => {
     e.preventDefault();
     console.log('booking', mission_id, 'reserved was', reserved);
     dispatch(book(mission_id));
@@ -23,16 +24,27 @@ const MissionItem = ({
 
   return (
     <tr>
-      <td>{missionName}</td>
+      <td style={{fontWeight: 'bold'}}>{missionName}</td>
       <td>{description}</td>
       <td>
-        <div className={reserved ? 'join' : 'leave'}>
-          {reserved ? 'Active Member' : 'Not A Member'}
+      <div>
+          {reserved ? 
+            <Badge bg="info" style={{width: '110px'}}>Active Member</Badge>
+            :
+            <Badge bg="secondary" style={{width: '110px'}}>Not A Member</Badge>}
         </div>
       </td>
       <td>
-        <button type="button" onClick={reserve} className={reserved ? 'joinButton hide' : 'joinButton show'}>Join Mission</button>
-        <button type="button" onClick={leaveMission} className={reserved ? 'leavButton show' : 'leavButton hide'}>Leave Mission</button>
+        <button
+          onClick={reserveMission}
+          className={reserved ? 'join hide' : 'join show'} >
+          Join Mission
+        </button>
+        <button
+          onClick={leaveMission}
+          className={reserved ? 'leave show' : 'leave hide'} >
+          Leave Mission
+        </button>
       </td>
     </tr>
   );
