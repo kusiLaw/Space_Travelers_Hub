@@ -4,6 +4,7 @@ import style from '../style/myProfile.module.css';
 
 function MyProfile() {
   const rockets = useSelector((state) => state.rockets);
+  const dragons = useSelector((state) => state.dragons);
 
   return (
     <div className={style.profile_container}>
@@ -27,6 +28,13 @@ function MyProfile() {
       <div className={style.reserved_container}>
         {/* add dragon reserve here */}
         <h2>dragon here</h2>
+        <ul>
+          {
+            dragons.filter((dragon) => dragon.reserved).map(
+              (dragon) => (<li key={dragon.id}>{dragon.designation}</li>),
+            )
+          }
+        </ul>
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+// eslint-disable-next-line import/named
 import { getDragons, bookDragon, cancelDragon } from '../../Redux/Dragons/Dragons';
 import Dragon from '../Dragon';
 
