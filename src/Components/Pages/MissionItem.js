@@ -13,7 +13,6 @@ const MissionItem = ({
 
   const reserveMission = (e) => {
     e.preventDefault();
-    console.log('booking', mission_id, 'reserved was', reserved);
     dispatch(book(mission_id));
   };
 
@@ -26,14 +25,14 @@ const MissionItem = ({
     <tr>
       <td style={{ fontWeight: 'bold' }}>{missionName}</td>
       <td>{description}</td>
-      <td>
+      <td className="status">
         <div>
           {reserved
-            ? <Badge bg="info" style={{ width: '110px' }}>Active Member</Badge>
-            : <Badge bg="secondary" style={{ width: '110px' }}>Not A Member</Badge>}
+            ? <Badge bg="info">Active Member</Badge>
+            : <Badge bg="secondary">Not A Member</Badge>}
         </div>
       </td>
-      <td>
+      <td className="status">
         <button
           type="button"
           onClick={reserveMission}

@@ -13,7 +13,7 @@
 }
 
 button {
-  width: 130px;
+  width: 90%;
   border: solid 1px;
   padding: 10px;
 }
@@ -25,4 +25,11 @@ button {
 .leave {
   border-color: red;
   color: red;
+}
+
+table td.status {
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px;
+  position: relative;
 }
