@@ -32,7 +32,12 @@ const reservation = {
   border: 'none',
 };
 
-export default function Dragon({ dragon, id, handleBooking }) {
+export default function Dragon({
+  dragon,
+  id,
+  handleBooking,
+  handleCancelling,
+}) {
   const {
     designation, type, image, description, reserved,
   } = dragon;
@@ -49,8 +54,8 @@ export default function Dragon({ dragon, id, handleBooking }) {
       <p style={p}>{type}</p>
       <p style={p1}>{description}</p>
       <div>
-        {reserved && (<span className="btn btn-secondary">Cancel Reservation</span>)}
-        {!reserved && (<button className="btn btn-success" type="button" id={id} style={reservation} onClick={handleBooking}>Make Reservation</button>)}
+        {reserved && (<button type="button" id={id} onClick={handleCancelling} className="btn btn-secondary">Cancel Reservation</button>)}
+        {!reserved && (<button className="btn btn-success" type="button" id={id} style={reservation} onClick={handleBooking}>Reserve Dragon</button>)}
       </div>
     </article>
   );
@@ -72,4 +77,8 @@ Dragon.propTypes = {
 
 Dragon.propTypes = {
   handleBooking: PropTypes.func.isRequired,
+};
+
+Dragon.propTypes = {
+  handleCancelling: PropTypes.func.isRequired,
 };
