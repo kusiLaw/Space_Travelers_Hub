@@ -7,7 +7,7 @@ import { book, leave } from '../../Redux/Missions/missions';
 import '../style/missions.css';
 
 const buttonStyle = {
-  width: '90%',
+  width: '100%',
   border: 'solid 1px',
   padding: '10px',
 };
