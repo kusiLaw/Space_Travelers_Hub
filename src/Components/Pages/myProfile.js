@@ -31,8 +31,7 @@ function MyProfile() {
       </div>
 
       <div className={style.reserved_container}>
-        {/* add dragon reserve here */}
-        <h2>dragon here</h2>
+        <h2>dMy Dragons</h2>
         <ul>
           {
             dragons.filter((dragon) => dragon.reserved).map(
