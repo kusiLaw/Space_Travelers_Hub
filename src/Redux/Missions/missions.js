@@ -1,6 +1,7 @@
 // Action types
 const READ = 'spaceTravel/missions/READ';
 const BOOK = 'spaceTravel/missions/BOOK';
+const LEAVE = 'spaceTravel/missions/LEAVE';
 
 // Action creators
 export const read = (missions) => ({
@@ -10,6 +11,11 @@ export const read = (missions) => ({
 
 export const book = (id) => ({
   type: BOOK,
+  payload: id,
+});
+
+export const leave = (id) => ({
+  type: LEAVE,
   payload: id,
 });
 
@@ -25,6 +31,11 @@ const missionsReducer = (state = [], action) => {
         return { ...item, reserved: true };
       });
       return newState;
+    case LEAVE:
+      return [...state.map((item) => {
+        if (item.id !== action.id) return item;
+        return { ...item, reserved: false };
+      })];
     default:
       return state;
   }

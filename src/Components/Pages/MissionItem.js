@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { book } from '../../Redux/Missions/missions';
+import { book, leave } from '../../Redux/Missions/missions';
 
 const MissionItem = ({
   mission_id, missionName, description, reserved,
@@ -15,6 +15,11 @@ const MissionItem = ({
     dispatch(book(mission_id));
   };
 
+  const leaveMission = (e) => {
+    e.preventDefault();
+    dispatch(leave(mission_id));
+  };
+
   return (
     <tr>
       <td>{missionName}</td>
@@ -22,7 +27,7 @@ const MissionItem = ({
       <td>status</td>
       <td>
         <button type="button" onClick={reserve}>Join Mission</button>
-        <button type="button">Leave Mission</button>
+        <button type="button" onClick={leaveMission}>Leave Mission</button>
       </td>
     </tr>
   );
