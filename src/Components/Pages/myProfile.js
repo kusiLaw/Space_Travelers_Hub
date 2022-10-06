@@ -5,16 +5,18 @@ import style from '../style/myProfile.module.css';
 function MyProfile() {
   const rockets = useSelector((state) => state.rockets);
   const dragons = useSelector((state) => state.dragons);
-  const joinedMissions = useSelector(state => state.missions.filter((mission) => mission.reserved));
+  const joinedMissions = useSelector(
+    (state) => state.missions.filter((mission) => mission.reserved),
+  );
 
   return (
     <div className={style.profile_container}>
 
       <div className={style.reserved_container}>
-      <h2>My Missions</h2>
-            <ul>
-              {joinedMissions.map((mission) => <li key={mission.mission_id}>{mission.missionName}</li>)}
-            </ul> 
+        <h2>My Missions</h2>
+        <ul>
+          {joinedMissions.map((mission) => <li key={mission.mission_id}>{mission.missionName}</li>)}
+        </ul>
       </div>
 
       <div className={style.reserved_container}>
