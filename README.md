@@ -59,16 +59,15 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Author2**
 - Josh Batey
-  - Github: [@Githubhandle](https://github.com/Bateyjosue)
-  - Twitter: [@Twitterhandle](https://twitter.com/)
-  - Linkedin: [Linkedin](https://www.linkedin.com/)
+  - GitHub: [@Bateyjosue](https://github.com/Bateyjosue)
+  - Twitter: [@JosueBatey](https://twitter.com/josuebatey)
+  - LinkedIn: [Josue (Josh) Batey](https://www.linkedin.com/in/josue-ishara/)
 
 
 👤 **Author3**
 - Farida-Hamid
-  - Github: [@Githubhandle](https://github.com/Farida-Hamid)
-  - Twitter: [@Twitterhandle](https://twitter.com/)
-  - Linkedin: [Linkedin](https://www.linkedin.com/)
+  - GitHub: [@Farida-Hamid](https://github.com/Farida-Hamid)
+  - LinkedIn: [LinkedIn](https://linkedin.com/in/farida-hamid)
 
 
 ## 🤝 Contributing
