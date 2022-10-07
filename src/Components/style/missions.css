@@ -1,0 +1,29 @@
+.show {
+  display: unset;
+}
+
+.hide {
+  display: none;
+}
+
+.join,
+.leave {
+  border-radius: 4px;
+  background: none;
+}
+
+.join {
+  border-color: black;
+}
+
+.leave {
+  border-color: red;
+  color: red;
+}
+
+table td.status {
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px;
+  position: relative;
+}

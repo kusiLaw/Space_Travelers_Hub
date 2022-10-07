@@ -1,0 +1,22 @@
+.header {
+  color: transparent;
+}
+
+.header a {
+  color: orangered;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 400ms ease-in-out;
+}
+
+.header a:hover {
+  color: darkcyan;
+  border-bottom: 2px solid;
+  padding-bottom: 0.2rem;
+}
+
+.navigation {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
