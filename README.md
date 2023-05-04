@@ -6,6 +6,9 @@
 The Space Travelers' Hub consists of Rockets, Missions, and the My Profile section. The Rockets section displays a list of all available SpaceX rockets. Users can book each rocket by clicking the reservation button or cancel the previously made booking. Built with react
 ## Built With
 
+![localhost_3000_rockets (1)](https://user-images.githubusercontent.com/52538840/236182607-67b98065-f70c-411d-bc52-0ef064369f70.png)
+
+
 - JavaScript
 - CSS
 - React
